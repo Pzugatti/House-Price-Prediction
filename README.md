@@ -75,7 +75,7 @@ According to the rule of thumb:
 * The ordinal variables have been label encoding by converting a string into an ordered number.
 * All year type variable's value converted into year interval. For instance: original = 1995 -> year interval = 23 = 2018 - 1995
 * Lastly, all the data transformed into dummy values.
-* The testing data-set go through the similar process as training data-set (e.g data transformation, remove weak features and etc.)
+* The testing data-set has go through the similar process as training data-set does (e.g data transformation, remove weak features and etc.)
 
 
 ## Model training
