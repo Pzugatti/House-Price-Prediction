@@ -55,8 +55,7 @@ The normality graph for 'SalePrice', 'GrLivArea' and 'TotalBsmtSF'. (Click on th
 This process is to transform the data into a normal distribution shape with the log transformation. The probability plot applied, which the data points lie on the diagonal line, it means the data more likely to be a normal distribution. Also, the skewness and kurtosis are indicating whether the data is a normal distribution. 
 
 According to the rule of thumb:
-https://www.spcforexcel.com/knowledge/basic-statistics/are-skewness-and-kurtosis-useful-statistics
-
+ - Reference: https://www.spcforexcel.com/knowledge/basic-statistics/are-skewness-and-kurtosis-useful-statistics
  - **Skewness**
       * If the skewness is between -0.5 and 0.5, the data are fairly symmetrical
       * If the skewness is between -1 and – 0.5 or between 0.5 and 1, the data are moderately skewed
@@ -82,6 +81,38 @@ The data has become less likely cone-like shape pattern:
 The XGBoost model will be used in this project. XGBoost stands for e**X**treme **G**radient **B**oosting. 
 - The well explanation is here : https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/
 
+The XGBoost model hyper-parameters have been randomly selected by using 'RandomizedSearchCV' library in order to get the best hyper-parameters in short time. After the training data fit into the XGBoost model, the result generated shown below:
+- Note: 'Test' showed in result is actually a validation data and 'r2' is R-squared.
+![model_result](https://user-images.githubusercontent.com/43289100/46290370-38129480-c5be-11e8-8095-d2414cf37999.PNG)
+
+The result shows that the 'Test r2' is slightly lower than 'Train r2', which means the model is little over-fitting.
 
 
+#### Standardized residual shape pattern
+![shape_of_standardized_residual](https://user-images.githubusercontent.com/43289100/46291411-f6cfb400-c5c0-11e8-8c0c-aff3219ab651.png)
 
+#### QQ plot
+visual checking whether the standardized residual is a normal distribution. The standardized residual seem like close to normal distribution.
+![qqplot](https://user-images.githubusercontent.com/43289100/46291482-33031480-c5c1-11e8-8b48-af81d6884ec0.png)
+
+#### Residual plot
+- reference: http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/#y-unbalanced-header
+![residualplot](https://user-images.githubusercontent.com/43289100/46291468-254d8f00-c5c1-11e8-82e3-25ad937de3ff.png)
+The data points is not so evenly distributed vertically, the model has room for improvement.
+
+
+## Make prediction for unseen data
+#### The RMSLE (Root Mean Squared Logarithmic Error) that I obtained:
+![kaggle_result](https://user-images.githubusercontent.com/43289100/46294110-a3ad2f80-c5c7-11e8-9ded-d1fdfea1cbef.PNG)
+
+#### Other top 6 competitor result:
+![top6_score](https://user-images.githubusercontent.com/43289100/46294256-f5ee5080-c5c7-11e8-8d7d-e78a84e2b787.PNG)
+
+After the result comparison, I still need to put more effort to improve the model. Probably need to review all the missing data, outliers, also, spend more time on data analysis.
+
+
+## Working enviroment
+Google Colab
+  - Python 3
+  - xgboost 0.7.post4
+  - sklearn 0.19.2
