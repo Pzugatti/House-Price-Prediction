@@ -93,7 +93,7 @@ The result shows that the 'Test r2' is slightly lower than 'Train r2', which mea
 ![shape_of_standardized_residual](https://user-images.githubusercontent.com/43289100/46291411-f6cfb400-c5c0-11e8-8c0c-aff3219ab651.png)
 
 #### QQ plot
-visual checking whether the standardized residual is a normal distribution. The standardized residual seems like close to normal distribution.
+visual checking whether the standardized residual is a normal distribution. The standardized residual seems like not close to normal distribution.
 
 ![qqplot](https://user-images.githubusercontent.com/43289100/46291482-33031480-c5c1-11e8-8b48-af81d6884ec0.png)
 
