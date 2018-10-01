@@ -66,7 +66,7 @@ According to the rule of thumb:
       * If the kurtosis is greater than zero, then the distribution has heavier tails and is called a leptokurtic distribution.
 
 
-The data has become less likely cone-like shape pattern:
+#### The data has become less likely cone-like shape pattern:
 ![sp_grla_scatter_no_outlier](https://user-images.githubusercontent.com/43289100/46288416-25955c80-c5b8-11e8-9698-75faa8c9ddd1.png)
 ![sp_totalbsf_scatter_no_outlier](https://user-images.githubusercontent.com/43289100/46288417-262df300-c5b8-11e8-9959-1229d35abcff.png)
 
@@ -83,6 +83,7 @@ The XGBoost model will be used in this project. XGBoost stands for e**X**treme *
 
 The XGBoost model hyper-parameters have been randomly selected by using 'RandomizedSearchCV' library in order to get the best hyper-parameters in short time. After the training data fit into the XGBoost model, the result generated shown below:
 - Note: 'Test' showed in the result is actually a validation data and 'r2' is R-squared.
+
 ![model_result](https://user-images.githubusercontent.com/43289100/46290370-38129480-c5be-11e8-8095-d2414cf37999.PNG)
 
 The result shows that the 'Test r2' is slightly lower than 'Train r2', which means the model is little over-fitting.
@@ -93,11 +94,13 @@ The result shows that the 'Test r2' is slightly lower than 'Train r2', which mea
 
 #### QQ plot
 visual checking whether the standardized residual is a normal distribution. The standardized residual seems like close to normal distribution.
+
 ![qqplot](https://user-images.githubusercontent.com/43289100/46291482-33031480-c5c1-11e8-8b48-af81d6884ec0.png)
 
 #### Residual plot
 - reference: http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/#y-unbalanced-header
 ![residualplot](https://user-images.githubusercontent.com/43289100/46291468-254d8f00-c5c1-11e8-82e3-25ad937de3ff.png)
+
 The data points are not so evenly distributed vertically, the model has room for improvement.
 
 
