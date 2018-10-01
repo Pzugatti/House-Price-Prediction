@@ -75,6 +75,7 @@ According to the rule of thumb:
 * The ordinal variables have been label encoding by converting a string into an ordered number.
 * All year type variable's value converted into year interval. For instance: original = 1995 -> year interval = 23 = 2018 - 1995
 * Lastly, all the data transformed into dummy values.
+* The testing data-set go through the similar process as training data-set (e.g data transformation, remove weak features and etc.)
 
 
 ## Model training
@@ -104,7 +105,7 @@ visual checking whether the standardized residual is a normal distribution. The 
 The data points are not so evenly distributed vertically, the model has room for improvement.
 
 
-## Make prediction for unseen data
+## Predict unseen data-set (testing data-set)
 #### The RMSLE (Root Mean Squared Logarithmic Error) that I obtained:
 ![kaggle_result](https://user-images.githubusercontent.com/43289100/46294110-a3ad2f80-c5c7-11e8-9ded-d1fdfea1cbef.PNG)
 
