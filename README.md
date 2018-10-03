@@ -16,7 +16,7 @@ The heat-map showed the correlation of each variable with another. The darker co
 ![all_numericvariable_heatmap](https://user-images.githubusercontent.com/43289100/46280304-27522680-c59e-11e8-8fa7-5022aa24ec87.png)
 
 
-#### The selected top 10 variables that highly correlated with 'SalePrice' from heatmap shown below:
+#### The selected top 10 variables that highly correlated to 'SalePrice' from heat-map shown below:
 
 ![topnumericvalue_heatmap](https://user-images.githubusercontent.com/43289100/46281780-31762400-c5a2-11e8-967c-80b2f06f60a3.png)
 
@@ -36,15 +36,15 @@ From above two images, we could clearly see that several data points (red circle
 ![sp_grla_scatter_outlier_coneline](https://user-images.githubusercontent.com/43289100/46284268-b9abf780-c5a9-11e8-8097-ad7d61f067a6.png)
 ![sp_totalbsf_scatter_outlier_coneline](https://user-images.githubusercontent.com/43289100/46284267-b9abf780-c5a9-11e8-953e-f08dab346c5f.png)
 
-There are some techniques to deal with outliers, but, above mentioned outliers have been removed to keep process simpler. 
+There are a lot of techniques to deal with outliers, but, above mentioned outliers have been removed to keep process simpler. 
 
 #### Remove weak features
-Those weak features with the correlation coefficient less than 0.2 that almost no relationship with the 'SalePrice' has been removed.
+Those weak features with the correlation coefficient less than 0.2 that almost no relationship with the 'SalePrice' have been removed.
 
 ![removed_not_important_numericvariable_heatmap](https://user-images.githubusercontent.com/43289100/46284546-cd0b9280-c5aa-11e8-85b9-04304cc16148.png)
 
 #### Display and impute missing data
-Removing all these features with missing data aren't a good practice, because some of these features might be important. However, there will be a tedious work to fill up the missing data that depending on domain knowledge and experience. In order to keep the process simple, all the features with missing data have been removed except 'Electrical', which only one missing data. The missing data will be filled in with the most common value in 'Electrical'.
+Removing all those features with missing data aren't a good practice, because some of those features might be important. However, there will be a tedious work to fill up the missing data that depending on domain knowledge and experience. In order to keep the process simple, all the features with missing data have been removed except 'Electrical', which only one missing data. The missing data will be filled in with the most common value in 'Electrical'.
 
 ![missingdata](https://user-images.githubusercontent.com/43289100/46284954-45268800-c5ac-11e8-80f2-bdd92c2f5fee.PNG)
 
@@ -52,7 +52,7 @@ Removing all these features with missing data aren't a good practice, because so
 The normality graph for 'SalePrice', 'GrLivArea' and 'TotalBsmtSF'. (Click on the picture to zoom in)
 ![normality](https://user-images.githubusercontent.com/43289100/46285814-62a92100-c5af-11e8-86cf-9421eb04f908.png)
 
-This process is to transform the data into a normal distribution shape with the log transformation. The probability plot applied, which the data points lie on the diagonal line, it means the data more likely to be a normal distribution. Also, the skewness and kurtosis are indicating whether the data is a normal distribution. 
+This process is to transform the data into a normal distribution shape used the log transformation. The probability plot applied, which if the data points lie on the diagonal line, it means the particular feature more likely to be a normal distribution. Also, the skewness and kurtosis are indicating whether the feature is a normal, left skew or right skew distribution. 
 
 According to the rule of thumb:
  - Reference: https://www.spcforexcel.com/knowledge/basic-statistics/are-skewness-and-kurtosis-useful-statistics
@@ -82,12 +82,12 @@ According to the rule of thumb:
 The XGBoost model will be used in this project. XGBoost stands for e**X**treme **G**radient **B**oosting. 
 - The good explanation is here: https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/
 
-The XGBoost model hyper-parameters have been randomly selected by using 'RandomizedSearchCV' library in order to get the best hyper-parameters in short time. After the training data fit into the XGBoost model, the result generated shown below:
+The XGBoost's hyper-parameters have been randomly selected by using 'RandomizedSearchCV' library in order to get the best hyper-parameters with lesser execution time. After the training data fit into the XGBoost model, the result generated shown below:
 - Note: 'Test' showed in the result is actually a validation data and 'r2' is R-squared.
 
 ![model_result](https://user-images.githubusercontent.com/43289100/46290370-38129480-c5be-11e8-8095-d2414cf37999.PNG)
 
-The result shows that the 'Test r2' is slightly lower than 'Train r2', which means the model is little over-fitting.
+The result shows that the 'Test r2' is slightly lower than 'Train r2', which means the model is little bit over-fitting.
 
 
 #### Standardized residual shape pattern
@@ -109,12 +109,12 @@ The data points are not so evenly distributed vertically, the model has room for
 #### The RMSLE (Root Mean Squared Logarithmic Error) that I obtained:
 ![kaggle_result](https://user-images.githubusercontent.com/43289100/46294110-a3ad2f80-c5c7-11e8-9ded-d1fdfea1cbef.PNG)
 
-#### Other top 6 competitor result:
+#### Other top 6 competitor results:
 ![top6_score](https://user-images.githubusercontent.com/43289100/46294256-f5ee5080-c5c7-11e8-8d7d-e78a84e2b787.PNG)
 
 
 ## Summary
-After the result comparison, I still need to put more effort to improve the model. The result reflects that some of the valuable data might not yet to be discovered from the dataset. Probably need to review all the missing data, outliers, also, spend more time on data analysis.
+After the result comparison, I still need to put more effort to improve the model. The result reflects that some of the valuable data might not yet to be discovered from the dataset. Probably need to review all the missing data, outliers, also, spend more time on data analysis and multicollinearity issue.
 
 ## Working enviroment
 Google Colab
