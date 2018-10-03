@@ -52,7 +52,7 @@ Removing all those features with missing data aren't a good practice, because so
 The normality graph for 'SalePrice', 'GrLivArea' and 'TotalBsmtSF'. (Click on the picture to zoom in)
 ![normality](https://user-images.githubusercontent.com/43289100/46285814-62a92100-c5af-11e8-86cf-9421eb04f908.png)
 
-This process is to transform the data into a normal distribution shape used the log transformation. The probability plot applied, which if the data points lie on the diagonal line, it means the particular feature more likely to be a normal distribution. Also, the skewness and kurtosis are indicating whether the feature is a normal, left skew or right skew distribution. 
+This process is to transform the data into a normal distribution shape used the log transformation. The probability plot applied, which if the data points lie on the diagonal line, it means the particular feature more likely to be a normal distribution. Also, the skewness and kurtosis are indicating whether the feature is a normal, left skew, right skew distribution, heavier tails or light tails. 
 
 According to the rule of thumb:
  - Reference: https://www.spcforexcel.com/knowledge/basic-statistics/are-skewness-and-kurtosis-useful-statistics
