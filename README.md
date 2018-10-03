@@ -79,7 +79,7 @@ According to the rule of thumb:
 
 
 ## Model training
-The XGBoost model will be used in this project. XGBoost stands for e**X**treme **G**radient **B**oosting. 
+The XGBoost model will be used in this project. XGBoost stands for e**X**treme **G**radient **B**oosting. XGBoost is fast and dominates structured or tabular datasets on classification and regression predictive modeling problems.
 - The good explanation is here: https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/
 
 The XGBoost's hyper-parameters have been randomly selected by using 'RandomizedSearchCV' library in order to get the best hyper-parameters with lesser execution time. After the training data fit into the XGBoost model, the result generated shown below:
